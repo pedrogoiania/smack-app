@@ -262,6 +262,9 @@
                                 <rect key="frame" x="103.5" y="402.5" width="207" height="29"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal" title="Dont have account? sign up here"/>
+                                <connections>
+                                    <action selector="createAccountClick:" destination="J4v-J5-mfn" eventType="touchUpInside" id="91a-C7-eiN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="oj9-JC-z1O"/>
@@ -280,10 +283,47 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9uR-hZ-lGJ"/>
+                    <connections>
+                        <segue destination="SCW-wh-YF2" kind="showDetail" identifier="toCreateAccount" id="r3P-at-oeO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4zQ-NR-S3P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2228.985507246377" y="-281.25"/>
+        </scene>
+        <!--Sing Up View Controller-->
+        <scene sceneID="Pdy-EH-sSx">
+            <objects>
+                <viewController id="SCW-wh-YF2" customClass="SingUpViewController" customModule="smack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lbq-9U-oiJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FP-Jq-p69">
+                                <rect key="frame" x="361" y="25" width="28" height="28"/>
+                                <state key="normal" image="closeButton"/>
+                                <connections>
+                                    <action selector="CloseButtonClick:" destination="J4v-J5-mfn" eventType="touchUpInside" id="j2b-mp-eu8"/>
+                                    <action selector="CloseClick:" destination="SCW-wh-YF2" eventType="touchUpInside" id="MYb-7E-xEt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1vi-yQ-l66"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2FP-Jq-p69" firstAttribute="top" secondItem="1vi-yQ-l66" secondAttribute="top" constant="25" id="2VO-n7-EhY"/>
+                            <constraint firstItem="1vi-yQ-l66" firstAttribute="trailing" secondItem="2FP-Jq-p69" secondAttribute="trailing" constant="25" id="XNZ-HI-l0c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hWX-3O-73y"/>
+                    <connections>
+                        <segue destination="Lmh-m6-JdZ" kind="unwind" identifier="unwind" unwindAction="prepareForUnwindWithSegue:" id="w0g-GM-EtB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mmA-3d-Zke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Lmh-m6-JdZ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3310" y="-281"/>
         </scene>
     </scenes>
     <resources>

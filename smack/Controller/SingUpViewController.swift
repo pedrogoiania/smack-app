@@ -1,5 +1,5 @@
 //
-//  ChannelViewController.swift
+//  SingUpViewController.swift
 //  smack
 //
 //  Created by Pedro Paulo on 30/11/20.
@@ -7,23 +7,18 @@
 
 import UIKit
 
-class ChannelViewController: UIViewController {
-    @IBOutlet weak var LoginButton: UIButton!
-    
-    @IBAction func LoginButtonPressed(_ sender: Any) {
-        
-        performSegue(withIdentifier: TO_LOGIN, sender: nil)
-    }
-    
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
-    
+class SingUpViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func CloseClick(_ sender: Any) {
+        performSegue(withIdentifier: UNWIND, sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
