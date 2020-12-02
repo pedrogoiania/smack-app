@@ -59,13 +59,8 @@ class AuthService {
         AF.request(REGISTER_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers).responseString { response in
             
             debugPrint(response)
-            
-            _ = response.result.flatMapError { (AFError) -> Result<String, Error> in debugPrint(String)
                 
             }
             
-        }
     }
-    
-    
 }

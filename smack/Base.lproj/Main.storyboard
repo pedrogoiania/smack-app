@@ -307,12 +307,46 @@
                                     <action selector="CloseClick:" destination="SCW-wh-YF2" eventType="touchUpInside" id="MYb-7E-xEt"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="jpZ-Ub-q2d">
+                                <rect key="frame" x="82" y="200" width="250" height="148"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDg-BL-BEs">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="2kE-lI-1lK"/>
+                                            <constraint firstAttribute="height" constant="40" id="SBM-h4-MwB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tld-WX-o4e">
+                                        <rect key="frame" x="0.0" y="54" width="250" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="dsq-ww-84X"/>
+                                            <constraint firstAttribute="width" constant="250" id="v7t-9V-tyC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kle-B7-9Im">
+                                        <rect key="frame" x="0.0" y="108" width="250" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="aQQ-RF-TxG"/>
+                                            <constraint firstAttribute="height" constant="40" id="olk-Sk-U1v"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1vi-yQ-l66"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2FP-Jq-p69" firstAttribute="top" secondItem="1vi-yQ-l66" secondAttribute="top" constant="25" id="2VO-n7-EhY"/>
+                            <constraint firstItem="jpZ-Ub-q2d" firstAttribute="top" secondItem="1vi-yQ-l66" secondAttribute="top" constant="200" id="E0c-7k-jfG"/>
                             <constraint firstItem="1vi-yQ-l66" firstAttribute="trailing" secondItem="2FP-Jq-p69" secondAttribute="trailing" constant="25" id="XNZ-HI-l0c"/>
+                            <constraint firstItem="jpZ-Ub-q2d" firstAttribute="centerX" secondItem="Lbq-9U-oiJ" secondAttribute="centerX" id="b4R-Td-hew"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hWX-3O-73y"/>
@@ -323,7 +357,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mmA-3d-Zke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Lmh-m6-JdZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3310" y="-281"/>
+            <point key="canvasLocation" x="3308.6956521739135" y="-281.25"/>
         </scene>
     </scenes>
     <resources>
