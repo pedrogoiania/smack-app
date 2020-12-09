@@ -9,6 +9,10 @@ import UIKit
 
 class SingUpViewController: UIViewController {
 
+    @IBOutlet weak var usernameText: UITextField!
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +21,21 @@ class SingUpViewController: UIViewController {
     
     @IBAction func CloseClick(_ sender: Any) {
         performSegue(withIdentifier: UNWIND, sender: nil)
+    }
+    
+    @IBAction func CreateAccoutClick(_ sender: Any) {
+        guard let email = emailText.text , emailText.text != "" else { return }
+        
+        guard let password = passwordText.text , passwordText.text != "" else { return }
+        
+        
+        debugPrint(email, password)
+        
+        AuthService.instance.registerUser(email: email, password: password) { (success) in
+            if success {
+                print("User created")
+            }
+        }
     }
     
     /*

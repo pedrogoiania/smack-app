@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class AuthService {
     
@@ -47,20 +48,57 @@ class AuthService {
     func registerUser(email: String, password: String, completion: @escaping CompletionHandler){
         let lowerCasedEmail = email.lowercased()
         
-        let headers: HTTPHeaders = [
-            HTTPHeader(name:"content-type" , value: "application/json; utf-8")
+        let body: [String: Any] = [
+            "email": lowerCasedEmail,
+            "password": password
         ]
+        
+        AF.request(REGISTER_URL,
+                   method: .post,
+                   parameters: body,
+                   encoding: JSONEncoding.default,
+                   headers: HEADERS)
+            .validate(statusCode: 200..<300)
+            .responseData { (response) in
+                switch response.result{
+                case .failure( _):
+                    completion(false)
+                    
+                case .success( _):
+                    completion(true)
+                }
+            }
+    }
+    
+    func loginUser(email: String, password: String, completion: @escaping CompletionHandler){
+        let lowerCasedEmail = email.lowercased()
         
         let body: [String: Any] = [
             "email": lowerCasedEmail,
             "password": password
         ]
         
-        AF.request(REGISTER_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: headers).responseString { response in
-            
-            debugPrint(response)
-                
+        AF.request(LOGIN_URL,
+                   method: .post,
+                   parameters: body,
+                   encoding: JSONEncoding.default,
+                   headers: HEADERS)
+            .validate(statusCode: 200..<300)
+            .responseJSON { (response) in
+                switch response.result{
+                case .failure( _):
+                    completion(false)
+                    
+                case let .success(values):
+                    
+                    let data = JSON(values)
+                    self.userEmail = data["user"].stringValue
+                    self.authToken = data["token"].stringValue
+                    
+                    self.isLoggedIn = true
+                    completion(true)
+                }
             }
-            
     }
+        
 }

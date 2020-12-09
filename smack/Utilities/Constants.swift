@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 typealias CompletionHandler = (_ Success: Bool) -> ()
 
@@ -13,6 +14,11 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 
 let BASE_URL = "http://localhost:3005/v1"
 let REGISTER_URL = "\(BASE_URL)/account/register"
+let LOGIN_URL = "\(BASE_URL)/account/login"
+
+let HEADERS: HTTPHeaders = [
+    HTTPHeader(name:"Content-Type" , value: "application/json")
+]
 
 // Segues
 let TO_LOGIN = "toLogin"

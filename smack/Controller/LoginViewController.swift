@@ -13,6 +13,9 @@ class LoginViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var usernameText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,4 +27,16 @@ class LoginViewController: UIViewController {
         performSegue(withIdentifier: TO_CREATE_ACCOUNT, sender: nil)
     }
     
+    @IBAction func LoginButtonClick(_ sender: Any) {
+        guard let email = usernameText.text , usernameText.text != "" else { return }
+//
+        guard let password = passwordText.text , passwordText.text != "" else { return }
+        
+        AuthService.instance.loginUser(email: email, password: password){
+            success in
+            if success {
+                debugPrint("fez login")
+            }
+        }
+    }
 }

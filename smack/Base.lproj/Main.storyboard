@@ -257,6 +257,9 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="LoginButtonClick:" destination="J4v-J5-mfn" eventType="touchUpInside" id="zqt-2g-MKe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3S-Cv-CoN">
                                 <rect key="frame" x="103.5" y="402.5" width="207" height="29"/>
@@ -284,6 +287,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="9uR-hZ-lGJ"/>
                     <connections>
+                        <outlet property="passwordText" destination="dOi-lz-iIh" id="Bbp-Ja-TII"/>
+                        <outlet property="usernameText" destination="c01-sq-h2a" id="zip-rc-XQH"/>
                         <segue destination="SCW-wh-YF2" kind="showDetail" identifier="toCreateAccount" id="r3P-at-oeO"/>
                     </connections>
                 </viewController>
@@ -326,7 +331,7 @@
                                             <constraint firstAttribute="width" constant="250" id="v7t-9V-tyC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kle-B7-9Im">
                                         <rect key="frame" x="0.0" y="108" width="250" height="40"/>
@@ -339,18 +344,33 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDJ-Wo-g8D">
+                                <rect key="frame" x="132.5" y="388" width="149" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" red="0.38823529410000002" green="0.2784313725" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="CreateAccoutClick:" destination="SCW-wh-YF2" eventType="touchUpInside" id="Epr-kC-C5w"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1vi-yQ-l66"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2FP-Jq-p69" firstAttribute="top" secondItem="1vi-yQ-l66" secondAttribute="top" constant="25" id="2VO-n7-EhY"/>
                             <constraint firstItem="jpZ-Ub-q2d" firstAttribute="top" secondItem="1vi-yQ-l66" secondAttribute="top" constant="200" id="E0c-7k-jfG"/>
+                            <constraint firstItem="jDJ-Wo-g8D" firstAttribute="top" secondItem="jpZ-Ub-q2d" secondAttribute="bottom" constant="40" id="GJr-ZS-2d2"/>
                             <constraint firstItem="1vi-yQ-l66" firstAttribute="trailing" secondItem="2FP-Jq-p69" secondAttribute="trailing" constant="25" id="XNZ-HI-l0c"/>
                             <constraint firstItem="jpZ-Ub-q2d" firstAttribute="centerX" secondItem="Lbq-9U-oiJ" secondAttribute="centerX" id="b4R-Td-hew"/>
+                            <constraint firstItem="jDJ-Wo-g8D" firstAttribute="centerX" secondItem="Lbq-9U-oiJ" secondAttribute="centerX" id="ld0-3R-9fJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hWX-3O-73y"/>
                     <connections>
+                        <outlet property="emailText" destination="tld-WX-o4e" id="c9n-Ld-rtg"/>
+                        <outlet property="passwordText" destination="kle-B7-9Im" id="sM1-M6-Ypx"/>
+                        <outlet property="usernameText" destination="fDg-BL-BEs" id="StK-Se-86s"/>
                         <segue destination="Lmh-m6-JdZ" kind="unwind" identifier="unwind" unwindAction="prepareForUnwindWithSegue:" id="w0g-GM-EtB"/>
                     </connections>
                 </viewController>
