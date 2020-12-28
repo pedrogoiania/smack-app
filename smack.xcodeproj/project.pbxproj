@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A508869525815666005FC519 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508869425815666005FC519 /* UserDataService.swift */; };
 		A557EBA725748931000B091D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557EBA625748931000B091D /* AppDelegate.swift */; };
 		A557EBA925748931000B091D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557EBA825748931000B091D /* SceneDelegate.swift */; };
 		A557EBAE25748931000B091D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A557EBAC25748931000B091D /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		2AB1437C870F05E7CC8D7F8D /* Pods_smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3760F7AFE105E8475EEA771 /* Pods-smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smack.debug.xcconfig"; path = "Target Support Files/Pods-smack/Pods-smack.debug.xcconfig"; sourceTree = "<group>"; };
+		A508869425815666005FC519 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		A557EBA325748931000B091D /* smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A557EBA625748931000B091D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A557EBA825748931000B091D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				A5CBA4672575EC8100CA3618 /* AuthService.swift */,
+				A508869425815666005FC519 /* UserDataService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				A557EBA725748931000B091D /* AppDelegate.swift in Sources */,
 				A5CBA4642575E1F000CA3618 /* SingUpViewController.swift in Sources */,
 				A557EBA925748931000B091D /* SceneDelegate.swift in Sources */,
+				A508869525815666005FC519 /* UserDataService.swift in Sources */,
 				A557EBE92574A542000B091D /* GradientView.swift in Sources */,
 				A5CBA4572575B7A500CA3618 /* Constants.swift in Sources */,
 				A5CBA4602575C28300CA3618 /* LoginViewController.swift in Sources */,

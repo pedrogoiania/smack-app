@@ -100,5 +100,44 @@ class AuthService {
                 }
             }
     }
+    
+    func createUser(
+        email: String,
+        name: String,
+        avatarColor: String,
+        avatarName: String,
+        completion: @escaping CompletionHandler
+    ){
+      
+        let lowerCasedEmail = email.lowercased()
+
+        let body: [String: Any] = [
+            "email": lowerCasedEmail,
+            "name": name,
+            "avatarName": avatarName,
+            "avatarColor": avatarColor,
+        ]
+        
+        var header = HEADERS
+        let authorization: HTTPHeader = HTTPHeader(name: "Authorization", value: AuthService.instance.authToken)
+        header.add(authorization)
+        
+        AF.request(
+                USER_ADD_URL,
+                method: .post,
+                parameters: body,
+                encoding: JSONEncoding.default,
+                headers: header)
+        .validate(statusCode: 200..<300)
+        .responseJSON { (response) in
+            switch response.result{
+            case .failure( _):
+                completion(false)
+            case .success( _):
+                completion(true)
+            }
+        }
+        
+    }
         
 }
